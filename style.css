@@ -1,0 +1,233 @@
+/* -------------------- CSS général -------------------- */
+
+* 
+{
+	box-sizing: border-box;
+}
+
+body
+{
+	background-color : #252213;
+	background-image: url('background.png');
+	background-size: cover;
+	margin: 0;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.clearboth {
+	clear: both;
+}
+
+/* -------------------- Bandeau infos -------------------- */
+
+#info {
+	margin-top: 0;
+	height: 60px;
+	background-color : rgba(130, 120, 70, 0.5);
+	width: 100%;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 15px
+}
+
+#info p {
+	line-height: 1;
+	margin: 0;
+}
+
+#save {
+	margin-bottom: 0;
+}
+
+
+/* -------------------- Plateau de jeu -------------------- */
+
+#plateau {
+	border: 1px solid black;
+	margin: 20px auto;
+}
+
+td {
+	height: 80px;
+	width: 80px;
+	border: 1px solid black;
+	text-align: center;
+	vertical-align: middle;
+	background-image: url('TreasureChest.png');
+	background-size: 320px;
+}
+
+td p {
+	line-height: 1;
+	margin: 0;
+}
+
+.td-content {
+	width: 100%;
+	height: 100%;
+}
+
+#empty-cell {
+	border: none;
+	background-image: none;
+}
+
+/* ---------- Cases compte ----------*/
+
+.rowCount, .columnCount {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	height: 100%;
+}
+
+#count1, #countA, #count3, #countC, #count5, #countE {
+	background-color: #867b45;
+}
+
+#count2, #countB, #count4, #countD {
+	background-color: #8ca8dd;
+}
+
+/* -------------------- Affichage des coffres -------------------- */
+
+.open {
+	background-position: -90px 85px;
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+.closed {
+	background-position: -164px 85px;
+}
+
+.empty {
+	background-position: -10px 85px;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.boom {
+	background-image: url('boom.png');
+	background-size : contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	animation: zoom 0.5s ease-in infinite alternate;
+}
+
+@keyframes zoom {
+    from {background-size : 100%;}
+    to {background-size : 50%;}
+}
+
+/* ---------- Affichage des valeurs ---------- */
+
+.text-content {
+	width: 100%;
+	height: 55%;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 2em;
+	text-shadow: 0 0 5px #000;
+}
+
+/* ---------- Indicateurs ---------- */
+
+.bomb-indic, .x1-indic, .x2-indic, .x3-indic {
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+}
+
+.bomb-indic {
+	float: left;
+}
+
+.x1-indic {
+	float: right;
+}
+
+.x2-indic {
+	margin-top: 40px;
+	float: left;
+}
+
+.x3-indic {
+	margin-top: 40px;
+	float: right;
+}
+
+.select {
+	background-color: rgba(140, 170, 220, 1);
+	box-shadow: 0 0 2px #000;
+}
+
+
+/* -------------------- Affichage de la modal infos -------------------- */
+/* ------ Fond de la modal ------ */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* ------ Contenu de la modal ------ */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.modal-content p {
+	margin: 10px;
+	text-align: justify;
+}
+
+
+/* ------ Bouton X de la modal ------ */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+
+@media screen and (max-width:600px){
+	.text-content {
+		font-size: 1.5em;
+	}
+}

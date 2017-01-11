@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>Coffres piégés</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+	</head>
+	<body>
+		<nav id="info">
+			<div id="score-panel">
+				<div id="total-score">Pièces accumulées : 0</div>
+				<div id="current-score">Pièces en cours : 0</div>
+				<div id="max-score">Meilleur score : 0</div>
+			</div>
+			<p id="level">Etage n°1</p>
+			<button id="level-down">Retourner à l'étage n°1</button>
+			<button id="help">Infos</button>
+		</nav>
+		<table id="plateau" oncontextmenu="return false;">
+			<tr id="rowA">
+				<td id="A1" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td id="A2" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td id="A3" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td id="A4" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td id="A5" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td>
+					<div id="countA" class="rowCount">
+						<p class="point-count">00</p>
+						<p class="trap-count"><i class="fa fa-bolt" aria-hidden="true"></i> 0</p>
+					</div>
+				</td>
+			</tr>
+			<tr id="rowB">
+				<td id="B1" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td id="B2" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td id="B3" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td id="B4" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td id="B5" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td>
+					<div id="countB" class="rowCount">
+						<p class="point-count">00</p>
+						<p class="trap-count"><i class="fa fa-bolt" aria-hidden="true"></i> 0</p>
+					</div>
+				</td>
+			</tr>
+			<tr id="rowC">
+				<td id="C1" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td id="C2" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td id="C3" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td id="C4" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td id="C5" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td>
+					<div id="countC" class="rowCount">
+						<p class="point-count">00</p>
+						<p class="trap-count"><i class="fa fa-bolt" aria-hidden="true"></i> 0</p>
+					</div>
+				</td>
+			</tr>
+			<tr id="rowD">
+				<td id="D1" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td id="D2" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td id="D3" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td id="D4" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td id="D5" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td>
+					<div id="countD" class="rowCount">
+						<p class="point-count">00</p>
+						<p class="trap-count"><i class="fa fa-bolt" aria-hidden="true"></i> 0</p>
+					</div>
+				</td>
+			</tr>
+			<tr id="rowE">
+				<td id="E1" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td id="E2" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td id="E3" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td id="E4" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td id="E5" class="chest closed">
+					<div class="td-content">
+						<div class="bomb-indic"><i class="fa fa-bolt" aria-hidden="true"></i></div>
+						<div class="x1-indic">1</div>
+						<div class="clearboth"></div>
+						<div class="x2-indic">2</div>
+						<div class="x3-indic">3</div>
+						<div class="text-content"></div>
+					</div>
+				</td>
+				<td>
+					<div id="countE" class="rowCount">
+						<p class="point-count">00</p>
+						<p class="trap-count"><i class="fa fa-bolt" aria-hidden="true"></i> 0</p>
+					</div>
+				</td>
+			</tr>
+			<tr id="countRow">
+				<td>
+					<div id="count1" class="columnCount">
+						<p class="point-count">00</p>
+						<p class="trap-count"><i class="fa fa-bolt" aria-hidden="true"></i> 0</p>
+					</div>
+				</td>
+				<td>
+					<div id="count2" class="columnCount">
+						<p class="point-count">00</p>
+						<p class="trap-count"><i class="fa fa-bolt" aria-hidden="true"></i> 0</p>
+					</div>
+				</td>
+				<td>
+					<div id="count3" class="columnCount">
+						<p class="point-count">00</p>
+						<p class="trap-count"><i class="fa fa-bolt" aria-hidden="true"></i> 0</p>
+					</div>
+				</td>
+				<td>
+					<div id="count4" class="columnCount">
+						<p class="point-count">00</p>
+						<p class="trap-count"><i class="fa fa-bolt" aria-hidden="true"></i> 0</p>
+					</div>
+				</td>
+				<td>
+					<div id="count5" class="columnCount">
+						<p class="point-count">00</p>
+						<p class="trap-count"><i class="fa fa-bolt" aria-hidden="true"></i> 0</p>
+					</div>
+				</td>
+				<td id="empty-cell"></td>
+			</tr>
+		</table>
+		<div id="save">
+			<button>Changer de salle et mettre le butin en sûreté</button>
+		</div>
+
+		<!-- Modal -->
+
+		<div id="infoModal" class="modal">
+		  <div class="modal-content">
+		    <span class="close">&times;</span>
+		    <p>Anah la cambrioleuse a réussi à s'introduire dans la salle des coffres du donjon. Aidez-la à s'en mettre plein les poches !</p>
+		    <p>Chaque coffre ouvert multiplie le score en cours : x1, x2, x3... mais un coffre peut aussi être piégé (<i class="fa fa-bolt" aria-hidden="true"></i>) ! Le nombre de pièces total et le nombre de pièges total sont indiqués pour chaque ligne et chaque colonne.</p>
+			<p>Si vous ouvrez tous les coffres x3 et x2, c'est gagné : vous ouvrez un passage vers l'étage suivant, avec de plus grandes possibilités de gains !</p>
+			<p>Vous pouvez à tout moment quitter la salle avec vos gains et rester au même étage.</p>
+			<p>Si un coffre explose, la salle s'effondre et vous retombez à l'étage précédent. La partie est finie, mais vous pouvez reprendre vos recherches dans une nouvelle salle !</p>
+			<p><i>Astuce : vous pouvez cliquer sur les indicateurs de chaque coffre pour vous souvenir de ce qu'il peut contenir.</i></p>
+		  </div>
+		</div>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<!--<script src="jquery-3.1.1.min.js"></script>-->
+		<script src="script.js"></script>
+	</body>
+</html>
